@@ -1,0 +1,11 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/esercizio_spring_di_greg
+    username: root
+    password:  java14
+  jpa:
+    database: mysql
+    show_sql: true
+    hibernate:
+      ddl-auto: update
