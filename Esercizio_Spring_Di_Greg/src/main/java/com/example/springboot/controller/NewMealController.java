@@ -25,4 +25,15 @@ public class NewMealController {
 
         return meal;
     }
+
+    @PostMapping("/meal/{name}")
+    public Meal modifyName(@PathVariable String name, @RequestBody Meal updatedMeal){
+        for (Meal meal : this.meals) {
+            if(meal.getName().equals(name)){
+                meal.setName(name);
+                return meal;
+            }
+        }
+        return null;
+    }
 }
