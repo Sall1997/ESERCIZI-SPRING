@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class FindMealByName {
+public class FindMealByNameController {
 
     @GetMapping("/meal/{name}")
     public List<Meal> findMealByName(@PathVariable String name){
