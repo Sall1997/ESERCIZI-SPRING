@@ -36,4 +36,15 @@ public class NewMealController {
         }
         return null;
     }
+    @DeleteMapping("/meal/{name}")
+    public Meal deleteMealeByName(@PathVariable String name){
+
+        for (Meal mealRemoved : this.meals) {
+            if(mealRemoved.getName().equals(name)){
+                meals.remove(mealRemoved);
+                return mealRemoved;
+            }
+        }
+        return null;
+    }
 }
