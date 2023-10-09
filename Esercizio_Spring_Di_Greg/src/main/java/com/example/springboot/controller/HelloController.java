@@ -13,7 +13,12 @@ public class HelloController {
 	}
 
 	@GetMapping(value = "/hello")
-	public  ResponseEntity<String> helloWorld(){
+	public ResponseEntity<String> helloWorld(){
 		return ResponseEntity.ok("Hello World");
+	}
+
+	@GetMapping("/greeting")
+	public ResponseEntity<String> goodAfternoon(){
+		return  ResponseEntity.ok("Good Afternoon");
 	}
 }
