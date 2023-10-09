@@ -47,4 +47,14 @@ public class NewMealController {
         }
         return null;
     }
+
+    @DeleteMapping("/meal/price/{price}")
+    public List<Meal>mealByPrice(@PathVariable double price){
+        for (Meal meal : this.meals) {
+            if(meal.getPrice() > price){
+                meals.remove(meal);
+            }
+        }
+        return meals;
+    }
 }
