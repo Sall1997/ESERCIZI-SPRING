@@ -26,7 +26,7 @@ public class NewMealController {
         return meal;
     }
 
-    @PostMapping("/meal/{name}")
+    @PutMapping("/meal/{name}")
     public Meal modifyName(@PathVariable String name, @RequestBody Meal updatedMeal){
         for (Meal meal : this.meals) {
             if(meal.getName().equals(name)){
@@ -56,5 +56,18 @@ public class NewMealController {
             }
         }
         return meals;
+    }
+
+    @PutMapping("/meal/{name}/price")
+    public Meal updateMealByName(@PathVariable String name, @RequestBody Meal meal){
+
+        for (Meal updatedMealByName : this.meals) {
+            if(meal.getName().equals(name)){
+                meals.remove(meal);
+                meals.add(updatedMealByName);
+                return updatedMealByName;
+            }
+        }
+        return null;
     }
 }
