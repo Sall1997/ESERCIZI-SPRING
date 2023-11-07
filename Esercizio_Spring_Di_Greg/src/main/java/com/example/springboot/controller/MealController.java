@@ -41,9 +41,9 @@ public class MealController {
         return ResponseEntity.ok(meal);
     }
 
-    @GetMapping("/summer-meals")
-    public ResponseEntity<List<Meal>> getSummerMeals() {
-        return ResponseEntity.ok(mealService.getSummerMeals());
+    @GetMapping("/winter-meals")
+    public ResponseEntity<List<Meal>> getWinterMeal() {
+        return ResponseEntity.ok(mealService.getWinterMeals());
     }
 
     @GetMapping("/secret-formula")
